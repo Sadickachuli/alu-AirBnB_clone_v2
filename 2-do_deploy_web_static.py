@@ -31,7 +31,7 @@ def do_deploy(archive_path):
     """
     Distribute archive.
     """
-    if os.pathexists(archive_path):
+    if os.path.exists(archive_path):
         archived_file = archive_path[9:]
         newest_version = "/data/web_static/releases/" + archived_file[:-4]
         archived_file = "/tmp/" + archived_file
