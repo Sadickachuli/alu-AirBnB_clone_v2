@@ -3,7 +3,7 @@
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name)
 
 
 @app.route('/hbnb', strict_slashes=False)
@@ -15,14 +15,14 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_is_fun(text):
     """Display C followed by the text variable"""
-    return 'C {}'.format(text.replace('_', ' '))
+    return 'C {}'.format(text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_is_cool(text='is cool'):
     """Display Python along with the text variable"""
-    return 'Python {}'.format(text.replace('_', ' '))
+    return 'Python {}'.format(text.replace('_', ' ')
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
@@ -49,7 +49,3 @@ def number_odd_or_even(n):
         # Render the template and pass the
         # value of n and even_or_odd to the template
         return render_template('6-number_odd_or_even.html', n=n, even_or_odd=even_or_odd)
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
