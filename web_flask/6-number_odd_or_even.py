@@ -56,10 +56,6 @@ def number_odd_or_even(n):
         #Render the template and pass the
         #value of n and even_or _odd to the template
     return render_template('6-number_odd_or_even.html', n=n, even_or_odd=even_or_odd)
-else:
-    #if n is not an integer, return an error message
-    return "Invalid input. Please provide an integer."
-
 
 
 if __name__ == '__main__':
