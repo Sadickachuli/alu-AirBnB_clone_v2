@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 
-"""List States and State"""
+"""Starts a Flask web application"""
 
 from models import storage
 from models.state import State
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 
 @app.route('/states', strict_slashes=False)
 def state_list():
-    """States List"""
+    """Comment"""
     states = storage.all('State').values()
     return render_template(
         "9-states.html",
@@ -21,7 +22,7 @@ def state_list():
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_by_id(id):
-    """State by ID"""
+    """Comment"""
     all_states = storage.all('State')
     key = "State.{}".format(id)
     try:
@@ -41,4 +42,4 @@ def teardown(self):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0')
